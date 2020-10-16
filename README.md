@@ -1,6 +1,6 @@
 # electron-dynamic-prompt
 
-Electron helper to prompt for a dynamic fields
+Electron helper to prompt for dynamic fields
 
 ## Usage
 
