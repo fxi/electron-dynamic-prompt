@@ -5,12 +5,18 @@ body {
     background-color: #fff;
 }
 
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
 #container {
     align-items: center;
     justify-content: center;
     display: flex;
     height: 100%;
     overflow: auto;
+    padding: 0 1rem;
 }
 
 #form {
@@ -18,37 +24,60 @@ body {
     padding-top: .5em;
 }
 
-#label {
+#header {
     max-width: 100%;
     max-height: 100%;
-    margin-bottom: .8em;
-    padding: 0 .5em;
+    margin-bottom: .3em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.3rem;
 }
 
-#data {
-    border-radius: 2px;
-    background: #fff;
-    width: 90%;
-    padding: .4em .5em;
-    border: 1px solid black;
-    min-height: 2em;
-    margin: 0 0 1.2em;
-}
-
-select#data {
-    height: 2em;
+#description {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    opacity: 0.6;
 }
 
 #data-container {
-    text-align: center;
+    margin: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+#data-container .form-group {
+    margin-bottom: 0.5rem;
+}
+
+#data-container .form-group label {
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+#data-container .form-group .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+body.dark-mode #data-container .form-group .form-control {
+    background-color: transparent;
+    border-color: #888;
+    color: #fff;
 }
 
 #buttons {
     text-align: right;
-    padding: 0 .5em 0 0;
 }
 
 #buttons > button,
@@ -58,7 +87,7 @@ select#data {
     margin: 0 0 0 .5em;
     font-size: .8em;
     line-height: 1em;
-    padding: .6em 1em
+    padding: .8em 1.2em
 }
 
 #ok {
