@@ -1,20 +1,21 @@
 {
-  "name": "electron-prompt",
-  "version": "0.0.0-dev",
-  "description": "Electron helper to prompt for a value via input or select",
+  "name": "electron-dynamic-prompt",
+  "version": "1.0.0",
+  "description": "Electron helper to prompt for dynamic fields",
   "keywords": [
     "electron",
     "prompt",
-    "string"
+    "dynamic",
+    "fields"
   ],
   "author": {
-    "name": "p-sam",
-    "email": "p-sam@users.noreply.github.com",
-    "url": "https://github.com/p-sam"
+    "name": "onlxltd",
+    "email": "onlxltd@users.noreply.github.com",
+    "url": "https://github.com/onlxltd"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/p-sam/electron-prompt.git"
+    "url": "https://github.com/onlxltd/electron-dynamic-prompt.git"
   },
   "license": "MIT",
   "main": "lib/index.js",
