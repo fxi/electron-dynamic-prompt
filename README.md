@@ -2,8 +2,6 @@
 
 Electron helper to prompt for a dynamic fields
 
-[![Build Status](https://travis-ci.com/p-sam/electron-prompt.svg?branch=master)](https://travis-ci.com/p-sam/electron-prompt) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-
 ## Usage
 
 ```sh
