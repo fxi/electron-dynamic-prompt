@@ -7,7 +7,7 @@ Electron helper to prompt for a value via input or select
 ## Usage
 
 ```sh
-npm install electron-prompt --save
+yarn add electron-dynamic-prompt --save
 ```
 
 ```js
@@ -20,13 +20,32 @@ prompt([options, parentBrowserWindow]).then(...).catch(...)
 const prompt = require('electron-prompt');
 
 prompt({
-    title: 'Prompt example',
-    label: 'URL:',
-    value: 'http://example.org',
-    inputAttrs: {
-        type: 'url'
-    },
-    type: 'input'
+    modal: false,
+    title: 'Dialog Title',
+    header: 'Dialog Title',
+    description: 'Dialog description',
+    height: 380,
+    fields: [
+        {
+            id: 'field1',
+            label: 'Field 1',
+            type: 'input',
+            attrs: {
+                placeholder: 'Field 1',
+                required: true
+            }
+        },
+        {
+            id: 'Field 2',
+            label: 'Field 2',
+            type: 'input',
+            attrs: {
+                type: 'password',
+                placeholder: 'Field 1',
+                required: true
+            }
+        }
+    ]
 })
 .then((r) => {
     if(r === null) {
@@ -50,14 +69,11 @@ prompt([options, parentBrowserWindow]).then(...).catch(...)
 
 | Key  | Explanation |
 | ------------- | ------------- |
-| title  | (optional, string) The title of the prompt window. Defaults to 'Prompt'. |
-| label  | (optional, string) The label which appears on the prompt for the input field. Defaults to 'Please input a value:'. |
+| title  | (optional, string) The title of the prompt window. Defaults to 'Dialog'. |
+| header  | (optional, string) The header which appears on the prompt for the input field. Defaults to ''. |
+| description  | (optional, string) The description which appears on the prompt below the header. Defaults to ''. |
 | buttonLabels | (optional, object) The text for the OK/cancel buttons. Properties are 'ok' and 'cancel'. Defaults to null. |
-| value  | (optional, string) The default value for the input field. Defaults to null.|
-| type   | (optional, string) The type of input field, either 'input' for a standard text input field or 'select' for a dropdown type input. Defaults to 'input'.|
-| inputAttrs  | (optional, object) The attributes of the input field, analagous to the HTML attributes: `{type: 'text', required: true}` -> `<input type="text" required>`. Used if the type is 'input' |
-| selectOptions  | (optional, object) The items for the select dropdown if using the 'select' type in the format 'value': 'display text', where the value is what will be given to the then block and the display text is what the user will see. |
-| useHtmlLabel | (optional, boolean) Whether the label should be interpreted as HTML or not. Defaults to false. |
+| fields | (requred: array) The fields to display in the dialog |
 | width  | (optional, integer) The width of the prompt window. Defaults to 370. |
 | minWidth  | (optional, integer) The minimum allowed width for the prompt window. Same default value as width. |
 | height  | (optional, integer) The height of the prompt window. Defaults to 130. |
