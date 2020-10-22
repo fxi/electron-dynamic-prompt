@@ -1,6 +1,6 @@
 {
   "name": "electron-dynamic-prompt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Electron helper to prompt for dynamic fields",
   "keywords": [
     "electron",
