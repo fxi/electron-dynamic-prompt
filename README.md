@@ -34,7 +34,7 @@ prompt({
             }
         },
         {
-            id: 'Field 2',
+            id: 'field2',
             label: 'Field 2',
             type: 'input',
             attrs: {
@@ -43,7 +43,14 @@ prompt({
                 required: true
             }
         }
-    ]
+    ],
+    validator: (args) => new Promise((resolve, reject) => {
+        if(args.field1 == 'abcd' && args.field2 == '1234') {
+            resolve()
+        } else {
+            reject('Invalid username or password')
+        }
+    })
 })
 .then((r) => {
     if(r === null) {
@@ -72,6 +79,7 @@ prompt([options, parentBrowserWindow]).then(...).catch(...)
 | description  | (optional, string) The description which appears on the prompt below the header. Defaults to ''. |
 | buttonLabels | (optional, object) The text for the OK/cancel buttons. Properties are 'ok' and 'cancel'. Defaults to null. |
 | fields | (requred: array) The fields to display in the dialog |
+| validator | (optional) Validate the response before closing the dialog |
 | width  | (optional, integer) The width of the prompt window. Defaults to 370. |
 | minWidth  | (optional, integer) The minimum allowed width for the prompt window. Same default value as width. |
 | height  | (optional, integer) The height of the prompt window. Defaults to 130. |
