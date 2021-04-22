@@ -1,6 +1,6 @@
 {
   "name": "electron-dynamic-prompt",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Electron helper to prompt for dynamic fields",
   "keywords": [
     "electron",
@@ -36,5 +36,6 @@
   },
   "devDependencies": {
     "xo": "^0.32.1"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
