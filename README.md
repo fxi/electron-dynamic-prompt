@@ -15,7 +15,7 @@ prompt([options, parentBrowserWindow]).then(...).catch(...)
 ## Example
 
 ```js
-const prompt = require('electron-prompt');
+const prompt = require('electron-dynamic-prompt');
 
 prompt({
     modal: false,
